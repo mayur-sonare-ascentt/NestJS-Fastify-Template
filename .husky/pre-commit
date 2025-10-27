@@ -3,12 +3,6 @@ set -e  # Exit immediately if a command exits with a non-zero status
 echo "Running lint-staged on staged files..."
 npx lint-staged || { echo "❌ Lint-staged checks failed! Commit aborted."; exit 1; }
 
-echo "Running ESLint..."
-npm run lint || { echo "❌ ESLint failed! Commit aborted."; exit 1; }
-
-echo "Checking code formatting..."
-npm run format:check || { echo "❌ Prettier check failed! Commit aborted."; exit 1; }
-
 # echo "Checking unused dependencies..."
 # npm run knip || { echo "❌ Unused dependencies check failed! Commit aborted."; exit 1; }
 
